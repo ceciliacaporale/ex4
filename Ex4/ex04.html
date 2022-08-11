@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Interesses</title>
+
+    <style>
+        
+       
+    
+        main {
+            width: 50%;
+            background-color: #eee;
+            border: 0.5px solid rgb(198, 198, 199);
+            margin: 0;
+            padding: 2% 4%;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        li {
+            width:  230px;
+            padding: 5px 10px 5px 20px;
+            margin: 3px;
+            background-color: rgb(189, 217, 240);
+            border: 0.5px solid rgb(148, 146, 241);
+            border-radius: 3px;
+
+        }
+        
+        li > button {
+            font-size: smaller;
+            float: right;
+            color: red;
+            border: none;
+            background-color: rgb(189, 217, 240);
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+    
+<body>
+
+    <main>
+        
+        <div>
+            <label for="interesse">Interesse:</label>
+            <input type="text" id="interesse" name="interesse">
+        </div>
+    
+        <ol>
+        </ol>
+
+    </main>
+    
+    <script>
+
+        window.onload = function () {
+            const botaoAdicionar = document.querySelector("#interesse")
+            botaoAdicionar.addEventListener("keyup", e => {
+                // função anônima para tratar o evento "keyup" para acionar uma tecla e o evento ser executado | o 'e' representa o objeto correspondente ao evento, ele contêm informações detalhadas.
+                if (e.key === "Enter")
+                // se a tecla precionada for a tecla 'Enter', o código estará chamando o adicionaInteresse.
+                    adicionarInteresse()
+                    // chamada de uma função em 'adicionaInteresse' ao acionar o 'Enter'.
+            })
+        }
+
+        function adicionarInteresse() {
+
+            const campoInteresse = document.querySelector("#interesse")
+            // seleção do botão do endereço do id
+            const listaInteresses = document.querySelector("ol")
+            // seleção do nó correspondente a lista ol
+
+            const novoLi = document.createElement("li")
+            // criação do nó na estrutura dom, correspondente ao li, usando o createElement
+            const novoSpan = document.createElement("span")
+            // criando o nó do botão, adicionando o conteúdo do campo
+            const novoBotao = document.createElement("button")
+            // Usando createElement para criar o li, span e button
+
+            novoSpan.textContent = campoInteresse.value
+            // Adicionar o conteúdo do campo, com textContent
+            novoBotao.textContent = 'X'
+            // Adicionando o conteúdo 'x' caractere.
+
+            novoLi.appendChild(novoSpan)
+            // Acrescentando o Span como filho do Li
+            novoLi.appendChild(novoBotao)
+            // Acrescento o Botão como filho do Li
+            listaInteresses.appendChild(novoLi)
+            // O Li contendo os dois filhos, ele é adicionado na lista de interesses
+            
+            novoBotao.onclick = function () {
+                // adicionando a ação da funcionalidade de remover o ítem da lista, com evento click no botão
+                listaInteresses.removeChild(novoLi)
+                // acesso ao elemento pai do Li, usando o método removeChild para ser removido o objeto novo Li.
+            }
+            
+            
+            campoInteresse.value = ''
+        }
+
+       
+
+    </script>
+</body>
+</html> 
