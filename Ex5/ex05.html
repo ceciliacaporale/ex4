@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo JavaScript Tabs</title>
+
+
+
+    <style>
+        h1 {
+            text-align: center;
+            color: #fff;
+        }
+
+        body {
+            margin: 0;
+            background-color: lightgray;
+            font-family: "Helvetica Neve", Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            width: 100%;
+            background-color: rgb(32, 32, 32);
+            color: rgb(255, 253, 253);
+            padding: 1px 0;
+        }
+
+        nav {
+            background-color: rgb(255, 255, 255);
+            color: #555;
+            text-align: center;
+            padding: -18px;
+            margin-top: -16px;
+        }
+
+        main {
+            background-color: rgb(255, 250, 250);
+            padding: 2% 4%;
+            border: 0.5px solid lightgray;
+            border-top: none;
+            border-radius: 3px;
+            box-shadow: 0 0 5px gray;
+
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        li {
+            display: inline;
+            font-family: "Helvetica Neve" Arial, Helvetica, sans-serif;
+        }
+
+
+        nav button {
+            border: none;
+            padding: 0 10px;
+            background-color: inherit;
+            height: 0px;
+            margin: 0;
+        }
+        
+        li::before {
+            content: "|";
+        }
+
+        li:first-child::before {
+        content: "";
+        margin-left: 0;
+    }
+
+        h2 {
+            color: rgb(8, 8, 148);
+            font-size: large;
+            text-align: center;
+        }
+
+        nav button:hover {
+            color: rgb(8, 8, 148);
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+
+        button.buttonActive {
+            font-weight: bold;
+            color: blue;
+        }
+
+        .tabs section {
+            display: none;
+        }
+
+        section.tabActive {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <section>
+            <h1>Faculdade de Computação</h1>
+        </section>
+    </header>
+
+    <nav>
+        <section>
+            <ul>
+                <li><button data-tabname="BCC">Ciência da Computação</button></li>
+                <li><button data-tabname="BSI">Sistemas de Informação</button></li>
+                <li><button data-tabname="MEST">Mestrado</button></li>
+                <li><button data-tabname="DOUT">Doutorado</button></li>
+            </ul>
+        </section>
+    </nav>
+
+    <main>
+
+        <section class="tabs">
+
+            <section data-tabname="BCC">
+                <h2>Bacharelado em Ciência da Computação</h2>
+                <p>O Curso de Bacharelado em Ciência da Computação é o marco inicial da Faculdade de Computação.
+                    Foi criado em 1988 e teve o seu reconhecimento em 11 de fevereiro de 1993 por meio da Portaria
+                    181/93
+                    do MEC. O objetivo do Curso é formar profissionais da área de Informática com competência no
+                    desenvolvimento
+                    de software, atendendo adequadamente as exigências de mercado de trabalho, além de capacitar o
+                    egresso a concluir
+                    com sucesso programas de pós-graduação.
+                    <br>Os egressos do curso têm obtido grande êxito na realização profissional, destacando, um
+                    considerável número de empresas
+                    pertencentes à ex-alunos do curso; um grande número de alunos que ingressam em consolidados cursos
+                    de pós-graduação
+                    no país e exterior; atuação significativa de nossos ex-alunos em atividades de ensino e pesquisa em
+                    instituições de ensino
+                    de nível superior; e outros tantos que atuam em grandes empresas nacionais e multinacionais.
+                </p>
+            </section>
+            <section data-tabname="BSI">
+                <h2>Bacharelado em Sistemas de Informação</h2>
+                <p>O curso de Bacharelado em Sistemas de Informação foi criado no ano de 2009 e teve o seu
+                    reconhecimento em 31 de Maio de 2013
+                    por meio da Portaria 248/13 do Ministério da Educação. <br>
+                    O Objetivo do Curso é preparar profissionais com sólida e ampla formação técnica na área de
+                    tecnologia da informação aplicada
+                    às organizações; Desenvolver discentes empreendedores, capazes de projetar, implementar e gerenciar
+                    a infraestrutura de tecnologia da
+                    informação envolvendo computadores, comunicação e dados em sistemas organizacionais; Consolidar um
+                    profissional cidadão, com compertências
+                    - conhecimentos, habilidades e atitudes - e com responsabilidade social, capaz de respeitar as
+                    diferenças individuais, saber produzir e usar
+                    a tecnologia em benefício da sociedade e com visão sistêmica de negócios.
+                </p>
+            </section>
+            <section data-tabname="MEST">
+                <h2>Mestrado em Ciência da Computação</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                    dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                    officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                    dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                    officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora culpa, laudantium placeat dolore,
+                    omnis nihil facere nisi incidunt quas similique quidem repellendus rem natus vitae iusto rerum
+                    accusantium
+                    quis officia!</p>
+            </section>
+            <section data-tabname="DOUT">
+                <h2>Doutorado em Ciências da Computação</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ullam doloremque ipsum,
+                    eveniet blanditiis eaque non alias. Quos dolore soluta temporibus consequuntur repudiandae
+                    nulla totam libero ipsam facilis. Odio, laboriosam.</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque neque quos molestiae nobis
+                    ipsum quibusdam, earum amet. Aliquam velit, sunt deleniti, doloremque quaerat repellat nemo,
+                    temporibus a eius obcaecati ratione!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta dolore laborum tempore sed
+                    perferendis aspernatur assumenda quia iusto pariatur, nisi, consequatur nobis deserunt
+                    expedita magni ratione ipsa, aliquam cumque incidunt?</p>
+            </section>
+        </section>
+    </main>
+
+    <script>
+        // utilizando o JavaScript para ocultar e apresentar as seções que estão carregadas na página.
+        window.onload = function () {
+            buttons = document.querySelectorAll("nav button")
+            // selecionando todos os botões dentro de nav
+            for (let button of buttons) {
+                button.onclick = () => openTab(button.dataset.tabname)
+                // Fazendo a chamada da função openTab, e passando o valor do 'button.dataset.tabname' que contêm o nome de indentificação do botão.
+            }
+            // selecionando todos os botões  que aparecem na barra de navegação
+
+            openTab("BCC")
+            // 
+        }
+
+        function openTab(tabName) {
+
+            const lastTabActive = document.querySelector(".tabActive")
+            // fazer com a tab seja exibida oculta, e o botão ativo deixa de ser ativo, com tabActive, consegue encontrar o section que está visível.
+            if (lastTabActive !== null)
+                lastTabActive.className = ""
+            // removendo a classe tabactive do elemento, deixando de aparecer.
+
+            const lastButtonActive = document.querySelector(".buttonActive")
+            // deixando de ser ativo
+            if (lastButtonActive !== null)
+                lastButtonActive.className = ""
+            // pois está removendo a classe
+
+            const query1 = ".tabs > section[data-tabname='" + tabName + "']"
+            // usando string com seletor de atributo, selecionando o elemento 'section' que tem o atributo data-tabname igual ao valor do argumento.
+            const query2 = "nav button[data-tabname='" + tabName + "']"
+            // mesmo caso, mas esse é com nav button.
+
+            document.querySelector(query1).className = "tabActive"
+            // acessando a propriedade className para indicar o novo valor da nova classe, atribuindo o tabActive o torna visível
+            document.querySelector(query2).className = "buttonActive"
+            // Selecionando todos os botões dentro do menu de navegação, acessando a propriedade className, alterando para 'buttonActive' para que o botão recém clicado apareça com as características.
+        }
+    </script>
+</body>
+
+</html>
